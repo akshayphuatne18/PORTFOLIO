@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #64ffda;
+  --background: #0a192f;
+  --secondary: #112240;
+  --text: #8892b0;
+  --text-bright: #ccd6f6;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+  }
+  to {
+    text-shadow: 0 0 20px var(--primary), 0 0 30px var(--primary);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.gradient-border {
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+              linear-gradient(to right, var(--primary), #ae00ff) border-box;
+  border: 2px solid transparent;
+}
